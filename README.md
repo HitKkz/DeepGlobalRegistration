@@ -117,6 +117,8 @@ The entire network depends on pretrained [FCGF models](https://github.com/chrisc
 
 ### 3DMatch
 You may download preprocessed data and train via these commands:
+
+您可以下载预处理数据并通过以下命令进行训练：
 ```shell
 ./scripts/download_3dmatch.sh /path/to/3dmatch
 export THREED_MATCH_DIR=/path/to/3dmatch; FCGF_WEIGHTS=/path/to/fcgf_3dmatch.pth ./scripts/train_3dmatch.sh
@@ -124,6 +126,8 @@ export THREED_MATCH_DIR=/path/to/3dmatch; FCGF_WEIGHTS=/path/to/fcgf_3dmatch.pth
 
 ### KITTI
 Follow the instruction on [KITTI Odometry website](http://www.cvlibs.net/datasets/kitti/eval_odometry.php) to download the KITTI odometry train set. Then train with
+
+按照[KITTI Odometry网站](http://www.cvlibs.net/datasets/kitti/eval_odometry.php)上的说明下载KITTI里程计训练集。 然后训练
 ```shell
 export KITTI_PATH=/path/to/kitti; FCGF_WEIGHTS=/path/to/fcgf_kitti.pth ./scripts/train_kitti.sh
 ```
@@ -134,6 +138,8 @@ export KITTI_PATH=/path/to/kitti; FCGF_WEIGHTS=/path/to/fcgf_kitti.pth ./scripts
 3DMatch测试集与训练集不同，可以在官网的[下载部分](http://3dmatch.cs.princeton.edu/)获得。 您可以下载这些场景并将其解压到新文件夹中。
 
 To evaluate trained model on 3DMatch or KITTI, you may use
+
+要在 3DMatch 或 KITTI 上评估经过训练的模型，您可以使用
 ```shell
 python -m scripts.test_3dmatch --threed_match_dir /path/to/3dmatch_test/ --weights /path/to/dgr_3dmatch.pth
 ```
@@ -144,6 +150,8 @@ python -m scripts.test_kitti --kitti_dir /path/to/kitti/ --weights /path/to/dgr_
 
 ## Generate figures
 We also provide experimental results of 3DMatch comparisons in `results.npz`. To reproduce figures we presented in the paper, you may use
+
+我们还在“results.npz”中提供了 3DMatch 比较的实验结果。 要重现我们在论文中提供的数字，您可以使用
 ```shell
 python scripts/analyze_stats.py assets/results.npz
 ```
