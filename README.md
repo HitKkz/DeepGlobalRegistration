@@ -3,7 +3,7 @@
 ## Introduction
 This repository contains python scripts for training and testing [Deep Global Registration, CVPR 2020 Oral](https://node1.chrischoy.org/data/publications/dgr/DGR.pdf).
 Deep Global Registration (DGR) proposes a differentiable framework for pairwise registration of real-world 3D scans. DGR consists of the following three modules:
-
+1
 - a 6-dimensional convolutional network for correspondence confidence prediction
 - a differentiable Weighted Procrustes algorithm for closed-form pose estimation
 - a robust gradient-based SE(3) optimizer for pose refinement. 
