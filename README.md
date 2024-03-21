@@ -29,6 +29,7 @@ For more details, please check out
 Recent end-to-end frameworks combine feature learning and pose optimization. PointNetLK combines PointNet global features with an iterative pose optimization method. Wang et al. in Deep Closest Point train graph neural network features by backpropagating through pose optimization.
 
 最近的端到端框架结合了特征学习和姿势优化。 PointNetLK 将 PointNet 全局特征与迭代姿态优化方法相结合。 王等人在 Deep Closest Point 中，通过姿势优化反向传播来训练图神经网络特征。
+
 We further advance this line of work. In particular, our Weighted Procrustes method reduces the complexity of optimization from quadratic to linear and enables the use of dense correspondences for highly accurate registration of real-world scans.
 
 我们进一步推进这方面的工作。 特别是，我们的加权 Procrustes 方法将优化的复杂性从二次优化降低到线性优化，并能够使用密集对应来实现真实世界扫描的高精度配准。
@@ -41,6 +42,7 @@ The first component is a 6-dimensional convolutional network that analyzes the g
 The second component we develop is a differentiable Weighted Procrustes solver. The Procrustes method provides a closed-form solution for rigid registration in SE(3). A differentiable version of the Procrustes method used for end-to-end registration passes gradients through coordinates, which requires O(N^2) time and memory for N keypoints. Instead, the Weighted Procrustes method passes gradients through the weights associated with correspondences rather than correspondence coordinates.
 
 我们开发的第二个组件是可微的加权 Procrustes 求解器。 Procrustes 方法为 SE(3) 中的刚性配准提供了封闭式解决方案。 用于端到端配准的 Procrustes 方法的可微分版本通过坐标传递梯度，这需要 O(N^2) 时间和 N 个关键点的内存。 相反，加权 Procrustes 方法通过与对应而不是对应坐标关联的权重传递梯度。
+
 The computational complexity of the Weighted Procrustes method is linear to the number of correspondences, allowing the registration pipeline to use dense correspondence sets rather than sparse keypoints. This substantially increases registration accuracy.
 
 加权 Procrustes 方法的计算复杂度与对应的数量成线性关系，允许配准管道使用密集的对应集而不是稀疏的关键点。 这大大提高了配准准确性。
@@ -48,6 +50,7 @@ The computational complexity of the Weighted Procrustes method is linear to the 
 Our third component is a robust optimization module that fine-tunes the alignment produced by the Weighted Procrustes solver and the failure detection module.
 
 我们的第三个组件是一个强大的优化模块，可以微调加权 Procrustes 求解器和故障检测模块产生的对齐。
+
 This optimization module minimizes a differentiable loss via gradient descent on the continuous SE(3) representation space. The optimization is fast since it does not require neighbor search in the inner loop such as ICP.
 
 该优化模块通过连续 SE(3) 表示空间上的梯度下降最小化可微损失。 优化速度很快，因为它不需要像 ICP 这样的内循环中的邻居搜索。
@@ -105,6 +108,7 @@ python demo.py
 The entire network depends on pretrained [FCGF models](https://github.com/chrischoy/FCGF#model-zoo). Please download corresponding models before training.
 
 整个网络依赖于预训练的[FCGF模型](https://github.com/chrischoy/FCGF#model-zoo)。 请在训练前下载相应的模型。
+
 | Model       | Normalized Feature  | Dataset | Voxel Size    | Feature Dimension |                  Link   |
 |:-----------:|:-------------------:|:-------:|:-------------:|:-----------------:|:------:|
 | ResUNetBN2C | True                | 3DMatch | 5cm   (0.05)  | 32                     | [download](https://node1.chrischoy.org/data/publications/fcgf/2019-08-16_19-21-47.pth) |
