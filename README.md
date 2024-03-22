@@ -81,7 +81,7 @@ pip install -r requirements.txt
 ## Demo
 You may register your own data with relevant pretrained DGR models. 3DMatch is suitable for indoor RGB-D scans; KITTI is for outdoor LiDAR scans.
 
-您可以用相关的预训练 DGR 模型配准自己的数据。 3DMatch适用于室内RGB-D扫描； KITTI 用于室外 LiDAR 扫描。
+您可以用相关的预训练 DGR 模型配准自己的数据。 3DMatch适用于室内RGB-D扫描； **KITTI 用于室外 LiDAR 扫描**。
 
 | Inlier Model | FCGF model  | Dataset | Voxel Size    | Feature Dimension | Performance                | Link   |
 |:------------:|:-----------:|:-------:|:-------------:|:-----------------:|:--------------------------:|:------:|
