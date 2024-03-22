@@ -18,7 +18,7 @@ DOWNLOAD_LIST = [
     (BASE_URL + "projects/DGR/", "ResUNetBN2C-feat32-3dmatch-v0.05.pth")
 ]
 
-# Check if the weights and file exist and download
+# Check if the weights and file exist and download检查权重和文件是否存在并下载
 if not os.path.isfile('redkitchen_000.ply'):
   print('Downloading weights and pointcloud files...')
   for f in DOWNLOAD_LIST:
